@@ -15,12 +15,6 @@
 			      <el-input type="password" v-model="ruleForm.password" auto-complete="off" placeholder="请输入密码"><img src="./img/PxCook-Temp_10.png" slot='prepend' width="30">  
             </el-input>
 			    </el-form-item>
-          <el-form-item>
-          <div>验证码</div>
-          <!-- <img src="./img/PxCook-Temp_20.png" height="60" width="60"> -->
-          <el-input type="text" placeholder="验证码" auto-complete='off' v-model='ruleForm.validateCode' style='width: 60%;'><img src="./img/PxCook-Temp_23.png" slot='prepend' width="30"></el-input>
-          <img  src="" />
-        </el-form-item>
 			    <el-form-item  style='margin-top: 50px;'>
 			    	<el-checkbox v-model="checked" checked class="remember" style='margin-bottom: 10px;float:left;'>记住密码</el-checkbox>
 			    	<el-button type='text' size='small' style='float: right;margin-top: 4px;' @click='forgetPassword'>忘记密码</el-button>

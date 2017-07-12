@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import router from '../router';
+
 // let base = 'http://183.129.196.138:8099';
 let base = 'http://iot.chnagiot.com:8099' 
 // let base = '/hongsui'
@@ -16,6 +18,22 @@ axios.defaults.headers.get['Content-Type'] = 'application/json';
 // 正式
 axios.defaults.headers['Dms-Access-Token'] = '12bab2592caa4d8ab54286f3808b0dbc';
 axios.defaults.withCredentials = true;
+
+axios.interceptors.response.use(
+    response => {
+
+        return response;
+    },
+    error => {
+        router.replace({
+              path: 'entry',
+              query: {redirect: router.currentRoute.fullPath}
+          })
+        return {code : -1010, msg : '错误'};   // 返回接口返回的错误信息
+    });
+
+
+
 let transformData = function(data){
     // Do whatever you want to transform the data
     let ret = ''

@@ -1,5 +1,5 @@
-
-
+import VueRouter from 'vue-router'
+import Vue from 'vue'
 import Home from '@/components/Home'
 
 import entry from '@/components/entry'
@@ -13,9 +13,10 @@ import personInfo from '@/components/personalInfo/personalInfo'
 import modifyPassword from '@/components/personalInfo/modifyPassword'
 import techSuport from '@/components/personalInfo/techSuport'
 import impowerMain from '@/components/impowerPage/impowerMain'
+Vue.use(VueRouter)
 
-
-let   routes= [
+export default  new VueRouter({
+   routes :[
     {
       path: "/",
       component: entry
@@ -71,7 +72,5 @@ let   routes= [
           ]
     }
     
-    
   ]
-
-export default routes;
+})

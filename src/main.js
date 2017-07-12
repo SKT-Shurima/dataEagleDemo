@@ -2,8 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import VueRouter from 'vue-router'
-import routes from './router'
+
+import router from './router'
 import Vuex from "vuex"
 import store from './vuex/store'
 import ElementUi from '.1.2.7@element-ui'
@@ -13,7 +13,7 @@ import echarts from '.3.5.2@echarts'
 
 Vue.use(ElementUi)
 Vue.use(Vuex)
-Vue.use(VueRouter)
+
 Vue.config.productionTip = false
 
  
@@ -42,9 +42,6 @@ const delCookie = (c_name)=>
     }   
 }
 
-const router = new VueRouter({
-  routes
-})
  // let user_token = getCookie("user_token");
 //  if(user_token){
 //  delCookie("user_token")
